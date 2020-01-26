@@ -513,6 +513,8 @@
 
 			var treeItem = $(_this.template.item)
 				.addClass('node-' + _this.elementId)
+				.addClass('node-level-' + level)
+				.addClass(node.state.checked ? 'node-checked' : '')
 				.addClass(node.state.checked ? 'node-checked' : '')
 				.addClass(node.state.disabled ? 'node-disabled': '')
 				.addClass(node.state.selected ? 'node-selected' : '')
