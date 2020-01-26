@@ -1,14 +1,14 @@
 {
-  "name": "bootstrap-treeview",
+  "name": "bootstrap-treeview-levels",
   "description": "Tree View for Twitter Bootstrap",
-  "version": "1.2.0",
-  "homepage": "https://github.com/jonmiles/bootstrap-treeview",
+  "version": "1.2.1",
+  "homepage": "https://github.com/tttaaannnggg/bootstrap-treeview",
   "author": {
-    "name": "Jonathan Miles"
+    "name": "Jonathan Miles, forked by Tang"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonmiles/bootstrap-treeview.git"
+    "url": "git://github.com:tttaaannnggg/bootstrap-treeview.git"
   },
   "bugs": {
     "url": "https://github.com/jonmiles/bootstrap-treeview/issues"
