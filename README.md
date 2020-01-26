@@ -10,6 +10,8 @@ A simple and elegant solution to displaying hierarchical tree structures (i.e. a
 
 ![Bootstrap Tree View Default](https://raw.github.com/jonmiles/bootstrap-treeview/master/screenshot/default.PNG)
 
+One change has been made from the original repo. Nesting depth is now tracked with a CSS class called `node-level-<n>`, where `<n>` is the depth of a given node (root nodes are labeled `node-level-1`, for instance).
+
 ## Dependencies
 
 Where provided these are the actual versions bootstrap-treeview has been tested against.  
@@ -25,13 +27,13 @@ Where provided these are the actual versions bootstrap-treeview has been tested 
 You can install using bower (recommended):
 
 ```javascript
-$ bower install bootstrap-treeview
+$ bower install bootstrap-treeview-levels
 ```
 
 or using npm:
 
 ```javascript
-$ npm install bootstrap-treeview
+$ npm install bootstrap-treeview-levels
 ```
 
 or [download](https://github.com/jonmiles/bootstrap-treeview/releases/tag/v1.2.0) manually.
