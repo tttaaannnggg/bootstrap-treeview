@@ -67,7 +67,11 @@
     onNodeUnchecked: undefined,
     onNodeUnselected: undefined,
     onSearchComplete: undefined,
-    onSearchCleared: undefined
+    onSearchCleared: undefined,
+    // Default formatter doesn't change anything
+    formatter: function(txt) {
+      return txt;
+    }
   };
 
   _default.options = {
@@ -282,7 +286,8 @@
         if (
           !node.state.disabled &&
           level < _this.options.levels &&
-          node.nodes && node.nodes.length > 0
+          node.nodes &&
+          node.nodes.length > 0
         ) {
           node.state.expanded = true;
         } else {
@@ -544,15 +549,10 @@
       // Add text
       if (_this.options.enableLinks) {
         // Add hyperlink
-        treeItem.append(
-          $(_this.template.link)
-            .attr("href", node.href)
-            .append(node.text)
-        );
-      } else {
-        // otherwise just text
-        treeItem.append(node.text);
+        treeItem.append($(_this.template.link).attr("href", node.href));
       }
+      treeItem.append(_this.options.formatter(node.text));
+      treeItem.attr("data-source", node.text);
 
       // Add tags as badges
       if (_this.options.showTags && node.tags) {
@@ -1209,7 +1209,7 @@
 	*/
   Tree.prototype.findNodes = function(pattern, modifier, attribute) {
     modifier = modifier || "g";
-    attribute = attribute || "text";
+    attribute = attribute || "data-source"; //'text';
 
     var _this = this;
     return $.grep(this.nodes, function(node) {
